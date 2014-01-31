@@ -51,3 +51,7 @@ body {
 	top: 50%;
 	left: -8px;
 }
+
+.d3-tip .details span {
+	color: red;
+}

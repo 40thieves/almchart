@@ -2,19 +2,11 @@ body {
 	font: 10px sans-serif;
 }
 
-.chart circle {
-	fill: steelblue;
-}
-
-.chart circle:hover {
-	fill: brown;
-}
-
-.axis text {
+text {
 	font: 10px sans-serif;
 }
 
-.axis path {
+.axis path, .axis line {
 	fill: none;
 	stroke: #000;
 	shape-rendering: crispEdges;
@@ -22,6 +14,33 @@ body {
 
 .circle {
 	stroke: #000;
+}
+
+.circle {
+	fill: steelblue;
+}
+
+.circle:hover {
+	fill: brown;
+}
+
+.label {
+	fill: #777;
+}
+
+.year.label {
+	font: 500 196px 'Helvetica Neue';
+	fill: #ddd;
+}
+
+.year.label.active {
+	fill: #aaa;
+}
+
+.overlay {
+	fill: none;
+	pointer-events: all;
+	cursor: ew-resize;
 }
 
 .tooltip {

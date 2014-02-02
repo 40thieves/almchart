@@ -20,6 +20,10 @@ body {
 	shape-rendering: crispEdges;
 }
 
+.circle {
+	stroke: #000;
+}
+
 .tooltip {
 	position: absolute;
 	z-index: 10;

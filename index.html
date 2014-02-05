@@ -79,7 +79,15 @@
 	<script type="text/javascript">
 		new AlmChart({
 			el: document.querySelector('#chart'),
-			url: 'data/almreport.json'
+			url: 'data/almreport.json',
+			dataSourceKeys: {
+				x: 'mendeley',
+				y: 'counter'
+			},
+			dataSourceNames: {
+				x: 'Mendeley Saves',
+				y: 'Views'
+			}
 		});
 	</script>
 </body>

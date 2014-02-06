@@ -13,7 +13,7 @@
 			<option value="articlecoverage">Article coverage</option>
 			<option value="articlecoveragecurated">Article coverage curated</option>
 			<option value="citeulike">CiteULike</option>
-			<option value="counter">Counter</option>
+			<option value="counter" selected>Counter</option>
 			<option value="crossref">CrossRef</option>
 			<option value="datacite">Datacite</option>
 			<option value="f1000">F1000</option>
@@ -57,7 +57,7 @@
 			<option value="researchblogging">Research Blogging</option>
 			<option value="scienceseeker">Science Seeker</option>
 			<option value="scopus">Scopus</option>
-			<option value="twitter">Twitter</option>
+			<option value="twitter" selected>Twitter</option>
 			<option value="wikipedia">Wikipedia</option>
 			<option value="wordpress">Wordpress</option>
 		</select>
@@ -77,18 +77,35 @@
 	<script type="text/javascript" src="lib/chart.js"></script>
 
 	<script type="text/javascript">
-		new AlmChart({
+		var chart = new AlmChart({
 			el: document.querySelector('#chart'),
-			url: 'data/almreport.json',
-			dataSourceKeys: {
-				x: 'mendeley',
-				y: 'counter'
-			},
-			dataSourceNames: {
-				x: 'Mendeley Saves',
-				y: 'Views'
-			}
+			url: 'data/almreport.json'
 		});
+
+		chart.draw();
+
+		// var xAxis = document.querySelector('#x-axis')
+		// ,	yAxis = document.querySelector('#y-axis')
+		// ;
+
+		// xAxis.addEventListener('change', function(e) {
+		// 	foo(e.target.value, yAxis.value);
+		// });
+
+		// yAxis.addEventListener('change', function(e) {
+		// 	foo(xAxis.value, e.target.value);
+		// });
+
+		// function foo(x, y) {
+		// 	chart.setConfig({
+		// 		dataSourceKeys: {
+		// 			x: x,
+		// 			y: y
+		// 		}
+		// 	});
+
+		// 	chart.draw();
+		// }
 	</script>
 </body>
 </html>

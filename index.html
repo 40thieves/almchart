@@ -13,7 +13,7 @@
 			<option value="articlecoverage">Article coverage</option>
 			<option value="articlecoveragecurated">Article coverage curated</option>
 			<option value="citeulike">CiteULike</option>
-			<option value="counter" selected>Counter</option>
+			<option value="counter" selected>View Count</option>
 			<option value="crossref">CrossRef</option>
 			<option value="datacite">Datacite</option>
 			<option value="f1000">F1000</option>
@@ -40,7 +40,7 @@
 			<option value="articlecoverage">Article coverage</option>
 			<option value="articlecoveragecurated">Article coverage curated</option>
 			<option value="citeulike">CiteULike</option>
-			<option value="counter">Counter</option>
+			<option value="counter">View Count</option>
 			<option value="crossref">CrossRef</option>
 			<option value="datacite">Datacite</option>
 			<option value="f1000">F1000</option>
@@ -89,18 +89,28 @@
 		;
 
 		xAxis.addEventListener('change', function(e) {
-			changeAxis(e.target.value, yAxis.value);
+			var x = { text: this.options[e.target.selectedIndex].text, value: e.target.value };
+			var y = { text: yAxis.options[yAxis.selectedIndex].text, value: yAxis.value };
+
+			changeAxis(x, y);
 		});
 
 		yAxis.addEventListener('change', function(e) {
-			changeAxis(xAxis.value, e.target.value);
+			var y = { text: this.options[e.target.selectedIndex].text, value: e.target.value };
+			var x = { text: xAxis.options[xAxis.selectedIndex].text, value: xAxis.value };
+
+			changeAxis(x, y);
 		});
 
 		function changeAxis(x, y) {
 			chart.setConfig({
 				dataSourceKeys: {
-					x: x,
-					y: y
+					x: x.value,
+					y: y.value
+				},
+				dataSourceNames: {
+					x: x.text,
+					y: y.text
 				}
 			});
 

@@ -84,28 +84,28 @@
 
 		chart.draw();
 
-		// var xAxis = document.querySelector('#x-axis')
-		// ,	yAxis = document.querySelector('#y-axis')
-		// ;
+		var xAxis = document.querySelector('#x-axis')
+		,	yAxis = document.querySelector('#y-axis')
+		;
 
-		// xAxis.addEventListener('change', function(e) {
-		// 	foo(e.target.value, yAxis.value);
-		// });
+		xAxis.addEventListener('change', function(e) {
+			changeAxis(e.target.value, yAxis.value);
+		});
 
-		// yAxis.addEventListener('change', function(e) {
-		// 	foo(xAxis.value, e.target.value);
-		// });
+		yAxis.addEventListener('change', function(e) {
+			changeAxis(xAxis.value, e.target.value);
+		});
 
-		// function foo(x, y) {
-		// 	chart.setConfig({
-		// 		dataSourceKeys: {
-		// 			x: x,
-		// 			y: y
-		// 		}
-		// 	});
+		function changeAxis(x, y) {
+			chart.setConfig({
+				dataSourceKeys: {
+					x: x,
+					y: y
+				}
+			});
 
-		// 	chart.draw();
-		// }
+			chart.draw();
+		}
 	</script>
 </body>
 </html>

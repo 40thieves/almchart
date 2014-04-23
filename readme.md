@@ -56,7 +56,7 @@ chart.draw();
 
 #### Changing the selected data sources
 
-Once the chart has been initialised, the selected data sources for the x- and y-axes can be changed using the `setConfig()` method.
+Once the chart has been initialised, the selected data sources for the x- and y-axes can be changed using the `setConfig()` method, and redrawn.
 
 ```js
 chart.setConfig({
@@ -69,9 +69,11 @@ chart.setConfig({
 		y: 'Mendeley saves'
 	}
 });
+
+chart.draw();
 ```
 
-This method can also be used to change the options set on the library. Note: at this time, the chart is not updated if the size or margins of the chart are changed.
+This method can also be used to change any options set on the library.
 
 ### License
 
